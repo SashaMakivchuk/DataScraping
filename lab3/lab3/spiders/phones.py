@@ -4,8 +4,9 @@ from lab3.items import Lab3Item
 
 class PhonesSpider(scrapy.Spider):
     name = "phones"
-    allowed_domains = ["allo.ua"]
+    allowed_domains = ["allo.ua", "localhost"]
     start_urls = [f"https://allo.ua/ua/products/mobile/p-{page}/" for page in range(1, 5)]
+    API_URL = "https://localhost:8000/submit/"
 
     def parse(self, response):
         soup = BeautifulSoup(response.text, "html.parser")
