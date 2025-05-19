@@ -64,9 +64,9 @@ DOWNLOAD_DELAY = 1
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "scrapy.pipelines.images.ImagesPipeline": 100,
-    "scrapy.pipelines.files.FilesPipeline": 200,
     'lab3.pipelines.DataCleaningPipeline': 400,
     'lab3.pipelines.SaveToDatabasePipeline': 500,
+    'lab3.pipelines.Lab3Pipeline': 300,
 }
 
 IMAGES_STORE = './img'
